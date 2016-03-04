@@ -1,8 +1,8 @@
 import { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 
-export const ellipsis = (ComposedComponent, maxLines, ellipsis = '...') => {
-  class Ellipsis extends Component {
+export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
+  class ReactMultilineEllipsis extends Component {
 
     constructor (props) {
       super(props)
@@ -39,11 +39,11 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsis = '...') => {
       if (numberOfLines > maxLines) {
         const currentText = this.state.text
         let ellipsedText = currentText.substring(0, currentText.lastIndexOf(' '))
-        if (this.startsWith(ellipsis, ' ')) {
+        if (this.startsWith(ellipsisText, ' ')) {
           ellipsedText = ellipsedText.substring(0, ellipsedText.lastIndexOf(' '))
         }
 
-        this.setState({ text: `${ellipsedText}${ellipsis}` })
+        this.setState({ text: `${ellipsedText}${ellipsisText}` })
       }
     }
 
@@ -59,9 +59,9 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsis = '...') => {
 
   }
 
-  Ellipsis.propTypes = {
+  ReactMultilineEllipsis.propTypes = {
     text: PropTypes.string.isRequired,
   }
 
-  return Ellipsis
+  return ReactMultilineEllipsis
 }
