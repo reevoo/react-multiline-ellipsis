@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { findDOMNode } from 'react-dom'
 
 export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
