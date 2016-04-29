@@ -1,6 +1,6 @@
 {
   "name": "react-multiline-ellipsis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React higher order component to create multiline ellipsed boxes",
   "main": "lib/index.js",
   "files": [
@@ -47,7 +47,7 @@
     "rimraf": "^2.5.2"
   },
   "peerDependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react": "^0.14.7 || ^15.0.0-0",
+    "react-dom": "^0.14.7 || ^15.0.0-0"
   }
 }
