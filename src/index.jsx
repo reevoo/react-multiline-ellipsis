@@ -13,6 +13,7 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
 
       this.state = {
         text: `${props.text}`,
+        originalText: `${props.text}`,
       }
     }
 
@@ -44,7 +45,13 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
         }
 
         this.setState({ text: `${ellipsedText}${ellipsisText}` })
+      } else if (this.hasTextChanges()) {
+        this.setState({ originalText: `${this.props.text}`, text: `${this.props.text}` })
       }
+    }
+
+    hasTextChanges() {
+      return this.props.text !== this.state.originalText;
     }
 
     startsWith (str, textToSearch) {
