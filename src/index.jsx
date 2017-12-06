@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
+import PropTypes from 'prop-types'
 
 export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
   class ReactMultilineEllipsis extends Component {
@@ -50,8 +51,8 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
       }
     }
 
-    hasTextChanges() {
-      return this.props.text !== this.state.originalText;
+    hasTextChanges () {
+      return this.props.text !== this.state.originalText
     }
 
     startsWith (str, textToSearch) {
