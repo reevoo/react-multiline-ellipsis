@@ -1,6 +1,6 @@
 {
   "name": "react-multiline-ellipsis",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React higher order component to create multiline ellipsed boxes",
   "main": "lib/index.js",
   "files": [
