@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { findDOMNode } from 'react-dom'
 import PropTypes from 'prop-types'
 
 export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
@@ -32,7 +31,7 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
     }
 
     checkEllipsis () {
-      const node = findDOMNode(this.refs.component)
+      const node = this.component
       const lineHeight = this.getDOMNodeProperty(node, 'line-height').replace('px', '')
       const height = this.getDOMNodeProperty(node, 'height').replace('px', '')
 
@@ -62,7 +61,7 @@ export const ellipsis = (ComposedComponent, maxLines, ellipsisText = '...') => {
     }
 
     render () {
-      return <ComposedComponent ref='component' { ...this.props } { ...this.state } />
+      return <ComposedComponent ref={(ref) => this.component = ref} { ...this.props } { ...this.state } />
     }
 
   }
